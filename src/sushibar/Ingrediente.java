@@ -10,17 +10,25 @@ public class Ingrediente {
     public String getNome() {
     return nome;
     }
- 
-    public int getQuant() {
-    return quant;
-    }
     
     public void setNomeProduto(Stringnomeproduto) {
     this.nome = nome;
     }
  
+    public int getQuant() {
+    return quant;
+    }
+ 
     public void setQuantidade(int quantidade) {
     this.quant = quant;
+    }
+    
+    public Calendar getValidade() {
+    return nome;
+    }
+    
+    public void setValidade(Calendar validade) {
+    this.validade = validade;
     }
     
 }
