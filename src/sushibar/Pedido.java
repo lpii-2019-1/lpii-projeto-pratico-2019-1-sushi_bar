@@ -1,12 +1,35 @@
 package sushibar;
+import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Pedido {
     
+    int idPedido;
     ArrayList<Prato> pratos;
-    double pracoTotal;
+    double precoTotal;
     String obs;
-    Funcionario funcionario;
+    int idFuncionario;
+    Date data;
+    boolean cartao;
+    String hora;
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+
+    
+    public int getIdPedido() {
+        return idPedido;
+    }
+
+    public void setIdPedido(int idPedido) {
+        this.idPedido = idPedido;
+    }
 
     public ArrayList<Prato> getPratos() {
         return pratos;
@@ -16,12 +39,12 @@ public class Pedido {
         this.pratos = pratos;
     }
 
-    public double getPracoTotal() {
-        return pracoTotal;
+    public double getPrecoTotal() {
+        return precoTotal;
     }
 
-    public void setPracoTotal(double pracoTotal) {
-        this.pracoTotal = pracoTotal;
+    public void setPrecoTotal(double precoTotal) {
+        this.precoTotal = precoTotal;
     }
 
     public String getObs() {
@@ -31,20 +54,32 @@ public class Pedido {
     public void setObs(String obs) {
         this.obs = obs;
     }
-    
-    
-    
-    public void pedir(){
-    
-        
-    
+
+    public int getIdFuncionario() {
+        return idFuncionario;
+    }
+
+    public void setIdFuncionario(int idFuncionario) {
+        this.idFuncionario = idFuncionario;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    public boolean isCartao() {
+        return cartao;
+    }
+
+    public void setCartao(boolean cartao) {
+        this.cartao = cartao;
     }
     
-    public void pagar(double d){
-    
-    
-    
-    }
+ 
     
     
 }
