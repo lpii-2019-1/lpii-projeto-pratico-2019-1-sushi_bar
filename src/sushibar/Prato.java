@@ -4,14 +4,25 @@ import java.util.ArrayList;
 
 public class Prato {
     
+    int idPrato;
     String nome;
     ArrayList<Ingrediente> nomeIng;
     double preco;
 
-    public Prato(String nome, ArrayList<Ingrediente> nomeIng, double preco) {
+    public int getIdPrato() {
+        return idPrato;
+    }
+
+    public void setIdPrato(int idPrato) {
+        this.idPrato = idPrato;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
         this.nome = nome;
-        this.nomeIng = nomeIng;
-        this.preco = preco;
     }
 
     public ArrayList<Ingrediente> getNomeIng() {
@@ -21,14 +32,6 @@ public class Prato {
     public void setNomeIng(ArrayList<Ingrediente> nomeIng) {
         this.nomeIng = nomeIng;
     }
-    
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 
     public double getPreco() {
         return preco;
@@ -37,6 +40,8 @@ public class Prato {
     public void setPreco(double preco) {
         this.preco = preco;
     }
+    
+    
     
     
     public void addIng(String ing){
