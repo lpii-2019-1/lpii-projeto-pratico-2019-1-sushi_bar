@@ -4,35 +4,36 @@ package sushibar;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
+
+
+
+
 
 public class FuncionarioDAO {
     
     private Connection conexao;
     private PreparedStatement stmt;
     
-    public FuncionarioDAO() {
-        this.conexao = new Conexao().getConexao();
+    public FuncionarioDAO(){
+        this.conexao = new Conexao().getConnection();
     }
     
-    public void inserir(Funcionario funcionario) {
-        String sql = "INSERT INTO funcionario (nome, data_nasc, endereco, salario, cargo, cpf) VALUES (?,?,?,?,?,?)";
+    public Funcionario pesquisaFunc(int idFuncionario) {
+        String sql = "SELECT * FROM Funcionario WHERE idFuncionario = ?";
         try {
             stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, funcionario.getNome());
-            stmt.setDate(2, funcionario.getNasc());
-            stmt.setString(3, funcionario.getEnd());
-            stmt.setDouble(4, funcionario.getSalario());
-            stmt.setString(5, funcionario.getCargo());
-            stmt.setInt(6, funcionario.getCPF());
-            stmt.execute();
+            stmt.setInt(1, idFuncionario);
+            ResultSet rs = stmt.executeQuery();
+            Funcionario funcionario = new Funcionario();
+            if (rs.next()) {
+                funcionario.setIdFuncionario(rs.getInt("idFuncionario"));
+                funcionario.setNome(rs.getString("Nome"));
+            }
             stmt.close();
+            return funcionario;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
-    
-    
-    
     
 }
