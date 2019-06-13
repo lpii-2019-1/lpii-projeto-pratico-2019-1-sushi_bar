@@ -5,8 +5,8 @@ package sushibar;
 
 public class Funcionario {
     
-    int idFuncionario;
-    String nome;
+   private int idFuncionario;
+   private String nome;
 
     public int getIdFuncionario() {
         return idFuncionario;
