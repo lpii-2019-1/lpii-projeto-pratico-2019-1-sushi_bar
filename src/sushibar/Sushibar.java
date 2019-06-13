@@ -77,7 +77,6 @@ public class Sushibar {
                 }
                 if ("s".equals(cartao)) {
                     pedido.setCartao(true);
-                    System.out.println("Aguardando resposta da maquina de cartao.....");
                 } else {
                     pedido.setCartao(false);
                 }
@@ -88,6 +87,13 @@ public class Sushibar {
                     System.out.println(prato.getNome() + "  R$" + formatar(prato.getPreco()));
                 }
                 System.out.println("Preco total: R$" + formatar(precoTotal));
+
+                if ("s".equals(cartao)) {
+                    System.out.println("\n");
+
+                    System.out.println("Aguardando resposta da maquina de cartao.....");
+                }
+
                 if (!pedido.isCartao()) {
                     Scanner sc5 = new Scanner(System.in);
                     System.out.println("Insira o valor do pagamento do cliente: ");
