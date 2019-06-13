@@ -5,13 +5,13 @@ import java.util.ArrayList;
 
 public class Pedido {
     
-    int idPedido;
-    ArrayList<Prato> pratos;
-    double precoTotal;
-    int idFuncionario;
-    Date data;
-    boolean cartao;
-    String hora;
+    private int idPedido;
+    private ArrayList<Prato> pratos;
+    private double precoTotal;
+    private int idFuncionario;
+    private Date data;
+    private boolean cartao;
+    private String hora;
 
     public String getHora() {
         return hora;
