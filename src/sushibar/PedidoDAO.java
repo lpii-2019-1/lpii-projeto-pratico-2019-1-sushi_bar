@@ -9,6 +9,9 @@ public class PedidoDAO {
 
     private Connection conexao;
     private PreparedStatement stmt;
+    private PreparedStatement stmt1;
+    private PreparedStatement stmt2;
+
 
     public PedidoDAO() {
 
@@ -39,8 +42,13 @@ public class PedidoDAO {
     public void inserirPratos(ArrayList<Integer> idPratos, int idPedido) {
 
         String sql = "INSERT INTO Pedido_Prato(idPedido, idPrato) VALUES(?,?)";
+        String sql2 = "SET FOREIGN_KEY_CHECKS= 0";
+        String sql3 = "SET FOREIGN_KEY_CHECKS= 1";
 
         try {
+            stmt1 = conexao.prepareStatement(sql2);
+            stmt1.execute();
+            stmt1.close();
             for (int i = 0; i < idPratos.size() - 1; i++) {
                 stmt = conexao.prepareStatement(sql);
                 stmt.setInt(1, idPedido);
@@ -48,6 +56,9 @@ public class PedidoDAO {
                 stmt.execute();
                 stmt.close();
             }
+            stmt2 = conexao.prepareStatement(sql3);
+            stmt2.execute();
+            stmt2.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
