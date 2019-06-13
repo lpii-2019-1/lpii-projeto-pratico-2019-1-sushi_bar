@@ -8,7 +8,6 @@ public class Pedido {
     int idPedido;
     ArrayList<Prato> pratos;
     double precoTotal;
-    String obs;
     int idFuncionario;
     Date data;
     boolean cartao;
@@ -45,14 +44,6 @@ public class Pedido {
 
     public void setPrecoTotal(double precoTotal) {
         this.precoTotal = precoTotal;
-    }
-
-    public String getObs() {
-        return obs;
-    }
-
-    public void setObs(String obs) {
-        this.obs = obs;
     }
 
     public int getIdFuncionario() {
