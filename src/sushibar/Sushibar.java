@@ -146,5 +146,6 @@ public class Sushibar {
                 System.out.println("Codigo de operacao invalido, favor checar a tabela de operacoes!");
             }
         }
+        System.out.println("Sessão finalizada...");
     }
 }
