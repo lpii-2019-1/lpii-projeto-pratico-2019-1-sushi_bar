@@ -3,9 +3,9 @@ package sushibar;
 
 public class Prato {
     
-    int idPrato;
-    String nome;
-    double preco;
+    private int idPrato;
+    private String nome;
+    private double preco;
 
     public int getIdPrato() {
         return idPrato;
